@@ -3,14 +3,13 @@ cmake_minimum_required(VERSION 3.15.0)
 # Extract package name and version
 find_package(ros_industrial_cmake_boilerplate REQUIRED)
 extract_package_metadata(pkg)
-project(${pkg_extracted_name} VERSION ${pkg_extracted_version} LANGUAGES CXX)
+project(${pkg_extracted_name} VERSION ${pkg_extracted_version} LANGUAGES CXX C)
 
 if(WIN32)
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
 # Ubuntu Noble can't auto-find MPI::MPI_C in VTK for GCC 13 and CMake 3.28.3, adding to fix that for now.
-enable_language(C)
 find_package(MPI REQUIRED COMPONENTS C)
 
 find_package(Boost REQUIRED)
