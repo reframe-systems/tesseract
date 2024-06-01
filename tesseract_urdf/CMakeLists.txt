@@ -144,7 +144,7 @@ configure_package(
   NAMESPACE tesseract
   TARGETS ${PROJECT_NAME}
   DEPENDENCIES
-    "MPI COMPONENTS C"
+    MPI
     Boost
     Eigen3
     console_bridge
