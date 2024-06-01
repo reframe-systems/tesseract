@@ -9,11 +9,13 @@ if(WIN32)
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
+# Ubuntu Noble can't auto-find MPI::MPI_C in VTK for GCC 13 and CMake 3.28.3, adding to fix that for now.
+enable_language(C)
+find_package(MPI REQUIRED COMPONENTS C)
+
 find_package(Boost REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(console_bridge REQUIRED)
-# Ubuntu Noble can't auto-find MPI::MPI_C in VTK for GCC 13 and CMake 3.28.3, adding to fix that for now.
-find_package(MPI REQUIRED COMPONENTS C)
 find_package(PCL REQUIRED COMPONENTS common io)
 find_package(tesseract_geometry REQUIRED)
 find_package(tesseract_common REQUIRED)
