@@ -29,6 +29,7 @@ TESSERACT_COMMON_IGNORE_WARNINGS_PUSH
 #include <boost/program_options.hpp>
 #include <iostream>
 TESSERACT_COMMON_IGNORE_WARNINGS_POP
+#include <fstream>
 
 #include <tesseract_collision/core/common.h>
 #include <tesseract_collision/bullet/convex_hull_utils.h>
